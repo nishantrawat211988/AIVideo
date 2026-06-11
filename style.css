@@ -62,20 +62,19 @@ p {
 .dark-text { color: var(--color-black); }
 .light-text { color: var(--color-white); }
 
-/* --- Floating Header --- */
 .floating-header {
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 50px;
   padding: 0.8rem 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   transition: all 0.3s var(--easing);
 }
 
@@ -159,14 +158,22 @@ p {
   max-width: 800px;
   margin: 0 auto;
   font-weight: 400;
+  letter-spacing: -0.02em;
+  word-spacing: -0.05em;
   text-shadow: 2px 2px 0px #000; /* Sharp, zero blur */
   transform: translateZ(50px); /* Lifts subtitle slightly off background in 3D space */
+}
+
+.hero-subtitle strong {
+  font-weight: 700;
+  color: var(--color-white);
+  font-size: 1.3em;
 }
 
 /* --- Showcase Section (Masonry) --- */
 .showcase-section {
   padding: 6rem 2rem;
-  background-color: var(--color-white);
+  background-color: var(--color-black);
   position: relative; /* important for absolute video bg */
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -236,32 +243,33 @@ p {
   transition: transform 0.6s var(--easing), box-shadow 0.6s var(--easing);
   background-color: #eee;
   cursor: pointer;
+  box-shadow: 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.25), 
+    inset -1px -1px 2px rgba(0, 0, 0, 0.7);
 }
 
-/* 3D Border and Glass reflection overlay on top of video/image */
-.media-container::after {
+.media-container:hover {
+  box-shadow: 
+    0 30px 60px rgba(0,0,0,0.3),
+    0 0 15px rgba(255, 255, 255, 0.08),
+    inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.35), 
+    inset -1.5px -1.5px 3px rgba(0, 0, 0, 0.85);
+}
+
+/* Glass reflection sheen under the border */
+.media-container::before {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: 12px;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 50%);
-  box-shadow: 
-    0 0 0 1px rgba(255, 255, 255, 0.05),
-    inset 1px 1px 2px rgba(255, 255, 255, 0.3), 
-    inset -1px -1px 2px rgba(0, 0, 0, 0.8);
   pointer-events: none;
-  z-index: 2;
-  transition: border-color 0.4s var(--easing), background 0.4s var(--easing), box-shadow 0.4s var(--easing);
+  z-index: 1;
+  transition: background 0.4s var(--easing);
 }
 
-.media-container:hover::after {
-  border-color: rgba(255, 255, 255, 0.4);
+.media-container:hover::before {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 60%);
-  box-shadow: 
-    0 0 10px rgba(255, 255, 255, 0.1),
-    inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.5), 
-    inset -1.5px -1.5px 3px rgba(0, 0, 0, 0.95);
 }
 
 .media-container img, 
@@ -361,43 +369,55 @@ p {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: none;
   border-radius: 20px;
   padding: 3rem 2rem;
-  transition: transform 0.4s var(--easing), background 0.4s var(--easing);
+  transition: transform 0.4s var(--easing), background 0.4s var(--easing), box-shadow 0.4s var(--easing);
   position: relative;
   overflow: hidden;
+  box-shadow: 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.25), 
+    inset -1px -1px 2px rgba(0, 0, 0, 0.7),
+    0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* 3D Border overlay for glass cards */
+/* 3D Mirrored Border overlay for cards and buttons */
+.media-container::after,
 .glass-card::after,
-.info-card::after {
+.info-card::after,
+.magnetic-btn::after {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 20px;
-  border: 1.5px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 
-    0 0 0 1px rgba(255, 255, 255, 0.05),
-    inset 1px 1px 2px rgba(255, 255, 255, 0.25), 
-    inset -1px -1px 2px rgba(0, 0, 0, 0.7);
+  border-radius: inherit;
+  padding: 1.5px; /* Border thickness */
+  background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 25%, #ffffff 40%, #27272a 60%, #e4e4e7 80%, #71717a 100%);
+  background-size: 200% 200%;
+  background-position: 0% 0%;
   pointer-events: none;
-  z-index: 2;
-  transition: border-color 0.4s var(--easing), box-shadow 0.4s var(--easing);
+  z-index: 3;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: background-position 0.6s var(--easing), filter 0.4s var(--easing);
 }
 
+.media-container:hover::after,
 .glass-card:hover::after,
-.info-card:hover::after {
-  border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 
-    0 0 10px rgba(255, 255, 255, 0.1),
-    inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.45), 
-    inset -1.5px -1.5px 3px rgba(0, 0, 0, 0.95);
+.info-card:hover::after,
+.magnetic-btn:hover::after {
+  background-position: 100% 100%;
+  filter: brightness(1.25);
 }
 
 .glass-card:hover {
   background: rgba(255, 255, 255, 0.08);
   transform: translateY(-10px) !important;
+  box-shadow: 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.35), 
+    inset -1px -1px 2px rgba(0, 0, 0, 0.8),
+    0 20px 40px rgba(0,0,0,0.5),
+    0 0 15px rgba(255, 255, 255, 0.08);
 }
 
 .glass-card h3 {
@@ -418,21 +438,30 @@ p {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: none;
   border-radius: 20px;
   padding: 3rem 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.4s var(--easing);
+  transition: transform 0.4s var(--easing), background 0.4s var(--easing), box-shadow 0.4s var(--easing);
   position: relative;
   overflow: hidden;
+  box-shadow: 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.25), 
+    inset -1px -1px 2px rgba(0, 0, 0, 0.7),
+    0 10px 30px rgba(0,0,0,0.4);
 }
 
 .info-card:hover {
   transform: translateY(-10px);
   background: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.35), 
+    inset -1px -1px 2px rgba(0, 0, 0, 0.8),
+    0 20px 40px rgba(0,0,0,0.5),
+    0 0 15px rgba(255, 255, 255, 0.08);
 }
 
 .info-visual {
@@ -616,8 +645,10 @@ p {
 }
 
 .magnetic-btn {
-  background: var(--color-white);
-  color: var(--color-black);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: var(--color-white);
   border: none;
   border-radius: 50px;
   padding: 1.5rem 3rem;
@@ -625,11 +656,23 @@ p {
   font-weight: 700;
   font-family: var(--font-primary);
   cursor: pointer;
-  transition: background 0.3s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.25), 
+    inset -1px -1px 2px rgba(0, 0, 0, 0.7),
+    0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: background 0.4s var(--easing), transform 0.4s var(--easing), box-shadow 0.4s var(--easing);
 }
 
 .magnetic-btn:hover {
-  background: #e0e0e0;
+  background: rgba(255, 255, 255, 0.12);
+  transform: scale(1.02);
+  box-shadow: 
+    inset 1px 1px 2px rgba(255, 255, 255, 0.35), 
+    inset -1px -1px 2px rgba(0, 0, 0, 0.8),
+    0 15px 30px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(255, 255, 255, 0.12);
 }
 
 /* --- Mobile Optimization --- */
