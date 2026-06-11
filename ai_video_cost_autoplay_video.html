@@ -1,0 +1,301 @@
+
+<h2 class="sr-only">Auto-playing animated infographic video: 60-second AI video production cost — Seedance 2.0 vs Veo 3.1 vs Kling AI</h2>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{margin:0;height:100vh;width:100vw;overflow:hidden;background:#07070f;}
+#wrapper{position:absolute;top:50%;left:50%;width:360px;height:400px;margin-top:-200px;margin-left:-180px;transform-origin:center center;display:flex;flex-direction:column;}
+#stage{width:100%;max-width:360px;aspect-ratio:1/1;margin:0 auto;background:#07070f;border-radius:18px;overflow:hidden;position:relative;font-family:var(--font-sans,sans-serif)}
+.scene{position:absolute;inset:0;padding:20px 20px 15px;display:flex;flex-direction:column;opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;pointer-events:none}
+.scene.in{opacity:1;transform:translateY(0);pointer-events:all}
+.scene.out{opacity:0;transform:translateY(-22px)}
+
+.stag{font-size:9px;letter-spacing:.12em;color:#444466;text-transform:uppercase;margin-bottom:6px}
+.shead{font-size:17px;font-weight:500;color:#eeeef8;line-height:1.25;margin-bottom:4px}
+.ssub{font-size:11px;color:#6868a0;margin-bottom:10px}
+.pill-row{display:flex;gap:6px;margin-bottom:12px;flex-shrink:0}
+.pill{padding:3px 10px;border-radius:100px;font-size:10px;font-weight:500}
+.ps{background:#17123a;color:#b0a4ff;border:1px solid #382e80}
+.pv{background:#0b1b33;color:#72c0ff;border:1px solid #183f70}
+.pk{background:#092018;color:#50e0a8;border:1px solid #185838}
+.cs{color:#b0a4ff}.cv{color:#72c0ff}.ck{color:#50e0a8}
+
+.bars-wrap{flex:1;display:flex;align-items:flex-end;gap:8px;padding-bottom:2px;min-height:110px}
+.bc{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end}
+.ba{font-size:15px;font-weight:500;opacity:0;transition:opacity .4s ease .5s}
+.br{width:100%;border-radius:6px 6px 0 0;height:0;transition:height .9s cubic-bezier(.22,.68,0,1.1)}
+.bl{font-size:9px;color:#444466;text-align:center;margin-top:2px}
+
+.div{border:none;border-top:.5px solid #14142a;margin:8px 0;flex-shrink:0}
+.note{font-size:9px;color:#343452;flex-shrink:0}
+
+.hr-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:.5px solid #12122a}
+.hd{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.hn{font-size:11px;font-weight:500;min-width:76px}
+.hbg{flex:1;height:5px;background:#12122a;border-radius:4px;overflow:hidden}
+.hf{height:100%;border-radius:4px;width:0;transition:width .9s ease}
+.hv{font-size:11px;font-weight:500;min-width:54px;text-align:right}
+
+.sr{display:flex;gap:6px;margin-bottom:8px;flex-shrink:0}
+.sc{flex:1;background:#0d0d1e;border:.5px solid #181830;border-radius:10px;padding:6px 8px}
+.sl{font-size:8px;color:#444466;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.sn{font-size:14px;font-weight:500}
+
+.fg{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:1px;background:#181830;border-radius:10px;overflow:hidden;flex:1}
+.fc{background:#0c0c1c;padding:6px 5px;display:flex;flex-direction:column;justify-content:center}
+.fch{background:#101020}
+.ft{font-size:8px;color:#444466;letter-spacing:.05em;text-transform:uppercase}
+.fv{font-size:10px;font-weight:500;color:#b0b0d0;margin-top:1px}
+.fvy{color:#50e0a8}.fvo{color:#606090}
+
+.vc{background:#0d0d1e;border:.5px solid #181830;border-radius:10px;padding:6px 8px;display:flex;align-items:flex-start;gap:8px;margin-bottom:5px}
+.vct{font-size:11px;font-weight:500;color:#d0d0e8;margin-bottom:1px}
+.vcd{font-size:10px;color:#585880;line-height:1.35}
+
+.pgwrap{height:3px;background:#12122a;border-radius:2px;overflow:hidden;margin-top:8px;flex-shrink:0}
+.pgfill{height:100%;background:#7a70e8;border-radius:2px;width:0}
+
+.ctrl{display:flex;align-items:center;justify-content:center;gap:10px;max-width:360px;margin:4px auto 0}
+.cbtn{background:transparent;border:.5px solid #252540;color:#606090;border-radius:8px;padding:5px 16px;font-size:11px;cursor:pointer;font-family:inherit;transition:all .15s}
+.cbtn:hover{background:#12122a;color:#d0d0e8}
+.sdots{display:flex;gap:5px;align-items:center}
+.sdot{width:5px;height:5px;border-radius:50%;background:#252540;transition:background .25s}
+.sdot.on{background:#7a70e8}
+.tlbl{font-size:10px;color:#303050;font-family:inherit;min-width:28px;text-align:center}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.ani{opacity:0;animation:fadeInUp .5s ease forwards}
+.d1{animation-delay:.15s}.d2{animation-delay:.3s}.d3{animation-delay:.45s}.d4{animation-delay:.6s}
+</style>
+
+<div id="wrapper">
+<div id="stage">
+
+  <div class="scene" id="s0">
+    <div class="stag ani">AI video cost report · 2026</div>
+    <div class="shead ani d1">What does 60 seconds<br>of AI video cost?</div>
+    <div class="ssub ani d2">Seedance 2.0 vs Veo 3.1 vs Kling AI</div>
+    <div class="pill-row ani d3">
+      <span class="pill ps">Seedance 2.0</span>
+      <span class="pill pv">Veo 3.1</span>
+      <span class="pill pk">Kling AI</span>
+    </div>
+    <div class="bars-wrap">
+      <div class="bc"><div class="ba cs" id="a00">$5.52</div><div class="br" id="r00" style="background:#b0a4ff"></div><div class="bl">Seedance 2.0</div></div>
+      <div class="bc"><div class="ba cv" id="a01">$4.50</div><div class="br" id="r01" style="background:#72c0ff"></div><div class="bl">Veo 3.1</div></div>
+      <div class="bc"><div class="ba ck" id="a02">$1.74</div><div class="br" id="r02" style="background:#50e0a8"></div><div class="bl">Kling AI</div></div>
+    </div>
+    <hr class="div"><div class="note">Total cost to generate one 60-second AI video</div>
+    <div class="pgwrap"><div class="pgfill" id="pg0"></div></div>
+  </div>
+
+  <div class="scene" id="s1">
+    <div class="stag ani">Per-second API pricing</div>
+    <div class="shead ani d1">Cost per second<br>of generated video</div>
+    <div class="ssub ani d2">Comparing raw API rates</div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px;">
+      <div class="hr-row"><div class="hd" style="background:#b0a4ff"></div><div class="hn cs">Seedance 2.0</div><div class="hbg"><div class="hf" id="h10" style="background:#b0a4ff"></div></div><div class="hv cs">$0.092/s</div></div>
+      <div class="hr-row"><div class="hd" style="background:#72c0ff"></div><div class="hn cv">Veo 3.1</div><div class="hbg"><div class="hf" id="h11" style="background:#72c0ff"></div></div><div class="hv cv">$0.075/s</div></div>
+      <div class="hr-row" style="border-bottom:none"><div class="hd" style="background:#50e0a8"></div><div class="hn ck">Kling AI</div><div class="hbg"><div class="hf" id="h12" style="background:#50e0a8"></div></div><div class="hv ck">$0.029/s</div></div>
+    </div>
+    <hr class="div">
+    <div class="sr" style="margin-bottom:0">
+      <div class="sc"><div class="sl">Cheapest</div><div class="sn ck">Kling AI</div></div>
+      <div class="sc"><div class="sl">Savings</div><div class="sn ck">68% less</div></div>
+      <div class="sc"><div class="sl">Best quality/$</div><div class="sn cv">Veo 3.1</div></div>
+    </div>
+    <div class="pgwrap"><div class="pgfill" id="pg1"></div></div>
+  </div>
+
+  <div class="scene" id="s2">
+    <div class="stag ani">Full cost breakdown</div>
+    <div class="shead ani d1">60-second video cost<br>per platform</div>
+    <div class="ssub ani d2">At standard 1080p resolution</div>
+    <div class="sr">
+      <div class="sc" style="border-top:2px solid #b0a4ff"><div class="sl">Seedance 2.0</div><div class="sn cs" id="c20">$0.00</div></div>
+      <div class="sc" style="border-top:2px solid #72c0ff"><div class="sl">Veo 3.1</div><div class="sn cv" id="c21">$0.00</div></div>
+      <div class="sc" style="border-top:2px solid #50e0a8"><div class="sl">Kling AI</div><div class="sn ck" id="c22">$0.00</div></div>
+    </div>
+    <div class="bars-wrap" style="flex:1;min-height:90px">
+      <div class="bc"><div class="br" id="r20" style="background:#b0a4ff"></div><div class="bl">Seedance 2.0</div></div>
+      <div class="bc"><div class="br" id="r21" style="background:#72c0ff"></div><div class="bl">Veo 3.1</div></div>
+      <div class="bc"><div class="br" id="r22" style="background:#50e0a8"></div><div class="bl">Kling AI</div></div>
+    </div>
+    <hr class="div"><div class="note">Rate × 60 seconds: $0.092 · $0.075 · $0.029</div>
+    <div class="pgwrap"><div class="pgfill" id="pg2"></div></div>
+  </div>
+
+  <div class="scene" id="s3">
+    <div class="stag ani">Feature comparison</div>
+    <div class="shead ani d1">What you get<br>for the price</div>
+    <div class="ssub ani d2">Key specs for 60s production</div>
+    <div class="fg" style="margin-top:4px">
+      <div class="fc fch"><div class="ft">Spec</div></div>
+      <div class="fc fch" style="text-align:center"><div class="ft cv" style="color:#72c0ff">Veo 3.1</div></div>
+      <div class="fc fch" style="text-align:center"><div class="ft ck" style="color:#50e0a8">Kling AI</div></div>
+      <div class="fc"><div class="ft">Resolution</div></div>
+      <div class="fc" style="text-align:center"><div class="fv">1080p–4K</div></div>
+      <div class="fc" style="text-align:center"><div class="fv">Up to 4K</div></div>
+      <div class="fc"><div class="ft">Max clip</div></div>
+      <div class="fc" style="text-align:center"><div class="fv">8 sec</div></div>
+      <div class="fc" style="text-align:center"><div class="fv">15 sec</div></div>
+      <div class="fc"><div class="ft">Native audio</div></div>
+      <div class="fc" style="text-align:center"><div class="fv fvy">Yes ✓</div></div>
+      <div class="fc" style="text-align:center"><div class="fv fvo">Optional</div></div>
+      <div class="fc"><div class="ft">Free tier</div></div>
+      <div class="fc" style="text-align:center"><div class="fv">Limited</div></div>
+      <div class="fc" style="text-align:center"><div class="fv fvy">66/day</div></div>
+      <div class="fc"><div class="ft">API access</div></div>
+      <div class="fc" style="text-align:center"><div class="fv">Vertex AI</div></div>
+      <div class="fc" style="text-align:center"><div class="fv">fal.ai</div></div>
+    </div>
+    <hr class="div" style="margin-top:6px"><div class="note">Seedance 2.0: 2K · 15s clips · native audio · no official API yet</div>
+    <div class="pgwrap"><div class="pgfill" id="pg3"></div></div>
+  </div>
+
+  <div class="scene" id="s4">
+    <div class="stag ani">Scale · $100/month budget</div>
+    <div class="shead ani d1">Videos per month<br>on $100 budget</div>
+    <div class="ssub ani d2">How many 60-second videos you can produce</div>
+    <div class="bars-wrap" style="flex:1;min-height:110px">
+      <div class="bc"><div class="ba cs" id="a40">18</div><div class="br" id="r40" style="background:#b0a4ff"></div><div class="bl">Seedance 2.0</div></div>
+      <div class="bc"><div class="ba cv" id="a41">22</div><div class="br" id="r41" style="background:#72c0ff"></div><div class="bl">Veo 3.1</div></div>
+      <div class="bc"><div class="ba ck" id="a42">57</div><div class="br" id="r42" style="background:#50e0a8"></div><div class="bl">Kling AI</div></div>
+    </div>
+    <hr class="div"><div class="note">Kling produces 3× more videos than Seedance on the same budget</div>
+    <div class="pgwrap"><div class="pgfill" id="pg4"></div></div>
+  </div>
+
+  <div class="scene" id="s5">
+    <div class="stag ani">Verdict</div>
+    <div class="shead ani d1">Which should<br>you choose?</div>
+    <div class="ssub ani d2">Best pick by priority</div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:0">
+      <div class="vc ani d1" style="border-left:2px solid #b0a4ff">
+        <div><i class="ti ti-sparkles" style="color:#b0a4ff;font-size:18px" aria-hidden="true"></i></div>
+        <div><div class="vct">Seedance 2.0 — Best quality</div><div class="vcd">$5.52/60s · Cinema-grade motion, native audio sync, 12-file multimodal input</div></div>
+      </div>
+      <div class="vc ani d2" style="border-left:2px solid #72c0ff">
+        <div><i class="ti ti-building" style="color:#72c0ff;font-size:18px" aria-hidden="true"></i></div>
+        <div><div class="vct">Veo 3.1 — Best enterprise</div><div class="vcd">$4.50/60s · Google Cloud SLA, 4K output, native audio for production teams</div></div>
+      </div>
+      <div class="vc ani d3" style="border-left:2px solid #50e0a8">
+        <div><i class="ti ti-coin" style="color:#50e0a8;font-size:18px" aria-hidden="true"></i></div>
+        <div><div class="vct">Kling AI — Best value</div><div class="vcd">$1.74/60s · 68% cheaper, 4K, 15s clips, 66 free credits/day</div></div>
+      </div>
+    </div>
+    <div class="pgwrap"><div class="pgfill" id="pg5"></div></div>
+  </div>
+
+</div>
+
+<div class="ctrl">
+  <div class="sdots" id="dotRow"></div>
+  <div class="tlbl" id="tlbl">10s</div>
+  <!-- buttons removed -->
+</div>
+</div>
+
+<script>
+const DUR = 10000;
+const N = 6;
+let cur = 0, playing = true, raf = null, elapsed = 0, last = null;
+let done = new Array(N).fill(false);
+
+const dotRow = document.getElementById('dotRow');
+for(let i=0;i<N;i++){
+  const d=document.createElement('div');
+  d.className='sdot'+(i===0?' on':'');
+  d.id='d'+i;
+  dotRow.appendChild(d);
+}
+
+function show(idx){
+  document.querySelectorAll('.scene').forEach((s,i)=>{
+    s.classList.remove('in','out');
+    if(i===idx) s.classList.add('in');
+    else if(i<idx) s.classList.add('out');
+  });
+  document.querySelectorAll('.sdot').forEach((d,i)=>d.classList.toggle('on',i===idx));
+  if(!done[idx]){setTimeout(()=>anim(idx),120);done[idx]=true;}
+}
+
+function anim(idx){
+  if(idx===0){
+    const v=[5.52,4.50,1.74],mh=110;
+    [0,1,2].forEach(i=>{
+      document.getElementById('r0'+i).style.height=Math.round((v[i]/5.52)*mh)+'px';
+      document.getElementById('a0'+i).style.opacity='1';
+    });
+  }
+  if(idx===1){
+    setTimeout(()=>{document.getElementById('h10').style.width='100%';},80);
+    setTimeout(()=>{document.getElementById('h11').style.width='81%';},200);
+    setTimeout(()=>{document.getElementById('h12').style.width='31%';},320);
+  }
+  if(idx===2){
+    const targets=[5.52,4.50,1.74],dur=1000,mh=90,t0=performance.now();
+    function step(now){
+      const p=Math.min((now-t0)/dur,1),e=1-Math.pow(1-p,3);
+      targets.forEach((tv,i)=>{
+        document.getElementById('c2'+i).textContent='$'+(tv*e).toFixed(2);
+        document.getElementById('r2'+i).style.height=Math.round((tv/5.52)*mh*e)+'px';
+      });
+      if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if(idx===4){
+    const v=[18,22,57],mh=110;
+    [0,1,2].forEach(i=>{
+      document.getElementById('r4'+i).style.height=Math.round((v[i]/57)*mh)+'px';
+      document.getElementById('a4'+i).style.opacity='1';
+    });
+  }
+}
+
+function tick(now){
+  if(!playing)return;
+  if(!last)last=now;
+  elapsed+=now-last; last=now;
+  const pct=(elapsed/DUR)*100;
+  const pg=document.getElementById('pg'+cur);
+  if(pg)pg.style.width=Math.min(100,pct.toFixed(1))+'%';
+  const secs=Math.max(0,Math.ceil((DUR-elapsed)/1000));
+  document.getElementById('tlbl').textContent=secs+'s';
+  if(elapsed>=DUR){
+    if(cur<N-1){elapsed=0;last=null;cur++;show(cur);raf=requestAnimationFrame(tick);}
+    else{restart();}
+    return;
+  }
+  raf=requestAnimationFrame(tick);
+}
+
+function togglePlay(){
+  playing=!playing;
+  if(playing){last=null;raf=requestAnimationFrame(tick);}
+  else cancelAnimationFrame(raf);
+  updateBtn();
+}
+
+function updateBtn(){}
+
+function restart(){
+  cancelAnimationFrame(raf);
+  done.fill(false);
+  cur=0;elapsed=0;last=null;playing=true;
+  document.querySelectorAll('.pgfill').forEach(p=>p.style.width='0%');
+  show(0);
+  updateBtn();
+  raf=requestAnimationFrame(tick);
+}
+
+show(0);
+setTimeout(()=>{raf=requestAnimationFrame(tick);},400);
+
+function fit() {
+  const scale = Math.min(window.innerWidth / 370, window.innerHeight / 410);
+  document.getElementById('wrapper').style.transform = `scale(${scale})`;
+}
+window.addEventListener('resize', fit);
+fit();
+</script>
